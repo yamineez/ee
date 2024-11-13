@@ -8,21 +8,14 @@ int optimalMergePattern(vector<int>& files) {
     int totalCost = 0;
 
     while (files.size() > 1) {
-        // Sort the files to find the two smallest
         sort(files.begin(), files.end());
-
-        // Take the two smallest elements
         int first = files[0];
         int second = files[1];
-
-        // Merge the two files
         int mergeCost = first + second;
         totalCost += mergeCost;
-
-        // Remove the merged files and add the new merged file
-        files.erase(files.begin());  // Remove the first element
-        files.erase(files.begin());  // Remove the second element (new first after erasing)
-        files.push_back(mergeCost);  // Add the merged file back to the list
+        files.erase(files.begin());
+        files.erase(files.begin());
+        files.push_back(mergeCost);
     }
 
     return totalCost;
