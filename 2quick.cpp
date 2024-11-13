@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void swap(int &a, int &b) {  // Pass by reference to swap correctly
+void swap(int &a, int &b) {
     int t = a;
     a = b;
     b = t;
@@ -20,7 +20,7 @@ int partition(int a[], int l, int h) {
     return i + 1;
 }
 
-void quickS(int a[], int l, int h) {  // Changed return type to void
+void quickS(int a[], int l, int h) {
     if (l < h) {
         int p = partition(a, l, h);
         quickS(a, l, p - 1);
